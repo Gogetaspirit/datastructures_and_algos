@@ -41,8 +41,44 @@
 // -----------
 function linkedListIntersection(list1, list2) {
   // TODO: Implement the hasCycle function!
-  
 
+
+  if (list1.head === null || list2.head === null) return null;
+  
+  let pointer1 = list1.head;
+  let pointer2 = list2.head;
+
+  while (pointer1 !== pointer2) {
+    pointer1 = pointer1.next;
+    pointer2 = pointer2.next;
+
+    //if they are both pointing to null it returns null
+    if (pointer1 === pointer2) {
+      return pointer1;
+    }
+    
+    if (pointer1 === null) {
+      pointer1 = list2.head;
+    }
+
+    if (pointer2 === null) {
+      pointer2 = list1.head;
+    }
+  }
+
+  return pointer1;
+
+
+  
+}
+
+function getLinkedListLength(listNode) {
+  if (listNode.next === null) {
+    return 1;
+  }
+  else {
+    return getLinkedListLength(listNode.next) + 1;
+  }
 }
 
 // ----------------------------------------

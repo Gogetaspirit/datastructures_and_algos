@@ -61,6 +61,18 @@
 // -----------
 function hasCycle(linkedList) {
   // TODO: Implement the hasCycle function!
+  let fastPointer = linkedList.head;
+  let slowPointer = linkedList.head;
+
+  while (fastPointer !== null && fastPointer.next !== null) {
+    fastPointer = fastPointer.next.next;
+    slowPointer = slowPointer.next;
+
+    if (fastPointer === slowPointer) {
+      return true;
+    }
+  }
+  return false;
 
 }
 
