@@ -108,7 +108,7 @@ class LRUCache {
     }
 
   }
-
+  //see if list is full
   isFull() {
     return this.length >= this.limit;
     
