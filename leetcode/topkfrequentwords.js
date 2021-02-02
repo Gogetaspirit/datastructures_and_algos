@@ -4,6 +4,7 @@
 //topfrequent
 
 var topKFrequent = function (words, k) {
+    //create an object
     const mappings = {}
     for (let i = 0; i < words.length; i++) {
         mappings[words[i]] = mappings[words[i]] + 1 || 1
