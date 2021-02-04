@@ -11,7 +11,7 @@
 //Given a non - empty string num containing only digits, return the number of ways to decode it.
 //The answer is guaranteed to fit in a 32 - bit integer.
 
-
+//memoization to optimize
 let memo = new Map()
 var numDecodings = function (s) {
     return recursiveWithMemo(0, s)
