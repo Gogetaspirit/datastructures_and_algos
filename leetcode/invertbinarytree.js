@@ -7,9 +7,7 @@ var invertTree = function (root) {
     root.right = left;
     return root
 };
-white_check_mark
-eyes
-raised_hands
+
 
 
 
