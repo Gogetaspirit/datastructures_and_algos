@@ -9,3 +9,5 @@ var sumOddLengthSubarrays = function (arr) {
     }
     return res
 };
+
+//runs in O(n) time
