@@ -58,30 +58,30 @@
 
 // console.log(bestSum(7, [2,3,4,7]))
 
-const canConstruct = (word, arrWords, str = '') => {
-    if (str === word) return true;
-    if (str.length > word.length) return false;
+// const canConstruct = (word, arrWords, str = '') => {
+//     if (str === word) return true;
+//     if (str.length > word.length) return false;
 
-    for (let i = 0; i < arrWords.length; i++) {
-        let partWord = str + arrWords[i]
-        let result = canConstruct(word, arrWords, partWord);
-        if (result === true) {
-            return true
-        }
-    }
-    return false;
-}
+//     for (let i = 0; i < arrWords.length; i++) {
+//         let partWord = str + arrWords[i]
+//         let result = canConstruct(word, arrWords, partWord);
+//         if (result === true) {
+//             return true
+//         }
+//     }
+//     return false;
+// }
 
-console.log(canConstruct('skateboard', ['bo', 'd', 'ate', 't', 'ska', 'sk', 'boar']))
+// console.log(canConstruct('skateboard', ['bo', 'd', 'ate', 't', 'ska', 'sk', 'boar']))
 
-const fib = (n) => {
-    let arr = new Array(n + 1).fill(0)
-    arr[1] = 1;
-    for (let i = 2; i < n + 1; i++) {
-        arr[i] = arr[i - 1] + arr[i - 2]
-    }
-    return arr[n]
+// const fib = (n) => {
+//     let arr = new Array(n + 1).fill(0)
+//     arr[1] = 1;
+//     for (let i = 2; i < n + 1; i++) {
+//         arr[i] = arr[i - 1] + arr[i - 2]
+//     }
+//     return arr[n]
 
-}
+// }
 
-console.log(fib(50))
+// console.log(fib(50))
