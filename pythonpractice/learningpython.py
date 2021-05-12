@@ -43,3 +43,19 @@ def is_valid_hex_code(string):
         return False
     i += 1
   return True
+
+  def sortedSquaredArray(array):
+    # Write your code here.
+	result = [0 for _ in array]
+	i = 0
+	j = len(array) - 1
+	for idx in reversed(range(len(array))):
+		first = array[i]
+		last = array[j]
+		if abs(first) > abs(last):
+			result[idx] = first * first
+			i += 1
+		else:
+			result[idx] = last * last
+			j -= 1
+	return result
