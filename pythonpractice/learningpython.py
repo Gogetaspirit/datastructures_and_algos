@@ -44,7 +44,7 @@ def is_valid_hex_code(string):
     i += 1
   return True
 
-  def sortedSquaredArray(array):
+def sortedSquaredArray(array):
     # Write your code here.
 	result = [0 for _ in array]
 	i = 0
@@ -59,3 +59,14 @@ def is_valid_hex_code(string):
 			result[idx] = last * last
 			j -= 1
 	return result
+
+  def firstNonRepeatingCharacter(string):
+    # Write your code here.
+    charFrequencies = {}
+	for char in string:
+		charFrequencies[char] = charFrequencies.get(char, 0) + 1
+	for idx in range(len(string)):
+		character = string[idx]
+		if charFrequencies[character] == 1:
+			return idx
+	return -1
