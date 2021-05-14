@@ -60,13 +60,34 @@ def sortedSquaredArray(array):
 			j -= 1
 	return result
 
-  def firstNonRepeatingCharacter(string):
+def firstNonRepeatingCharacter(string):
     # Write your code here.
-    charFrequencies = {}
-	for char in string:
+  charFrequencies = {}
+  for char in string:
 		charFrequencies[char] = charFrequencies.get(char, 0) + 1
 	for idx in range(len(string)):
 		character = string[idx]
 		if charFrequencies[character] == 1:
 			return idx
 	return -1
+
+def tandemBicycle(redShirtSpeeds, blueShirtSpeeds, fastest):
+    # Write your code here.
+    redShirtSpeeds.sort()
+	blueShirtSpeeds.sort()
+	
+	if not fastest:
+		reverseArrayInPlace(redShirtSpeeds)
+	totalSpeed = 0
+	for idx in range(len(redShirtSpeeds)):
+		rider1 = redShirtSpeeds[idx]
+		rider2 = blueShirtSpeeds[len(blueShirtSpeeds) - idx - 1]
+		totalSpeed += max(rider1, rider2)
+	return totalSpeed
+def reverseArrayInPlace(array):
+	start = 0
+	end = len(array) - 1
+	while start < end:
+		array[start], array[end] = array[end], array[start]
+		start += 1
+		end -=1
