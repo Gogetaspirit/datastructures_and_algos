@@ -91,3 +91,26 @@ def reverseArrayInPlace(array):
 		array[start], array[end] = array[end], array[start]
 		start += 1
 		end -=1
+
+def longestPeak(array):
+    # Write your code here.
+    #[1,2,3,3,4,0,10,6,5,-1,-3,2,3]
+	#find peek and then expand from there
+	idx = 1
+	largestPeak = 0
+	while idx < len(array) - 1:
+		#find peak
+		first = array[idx-1]
+		middle = array[idx]
+		third = array[idx+1]
+		#peak
+		if first < middle and middle > third:
+			leftIdx = idx - 2
+			while leftIdx >= 0 and array[leftIdx] < array[leftIdx+1]:
+				leftIdx -= 1
+			rightIdx = idx + 2
+			while rightIdx < len(array) and array[rightIdx] < array[rightIdx - 1]:
+				rightIdx += 1
+			largestPeak = max(largestPeak, rightIdx - leftIdx - 1)
+		idx += 1
+	return largestPeak
