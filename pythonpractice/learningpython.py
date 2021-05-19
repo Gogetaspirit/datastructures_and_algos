@@ -135,4 +135,18 @@ def numberOfWaysToTraverseGraph(width, height):
     if width is 1 or height is 1:
 		return 1
 	return numberOfWaysToTraverseGraph(width-1, height) + numberOfWaysToTraverseGraph(width, height-1)
-	
+
+def validStartingCity(distances, fuel, mpg):
+    # Write your code here.
+    idx = 0
+	for idx in range(len(distances)):
+		currentFuelMiles = 0
+		for currentCityIdx in range(idx, idx+len(distances)):
+			currentCityIdx = currentCityIdx % len(distances)
+			currentFuelMiles += mpg * fuel[currentCityIdx] - distances[currentCityIdx]
+			if currentFuelMiles < 0:
+				break
+		if currentFuelMiles == 0:
+			return idx
+				
+
