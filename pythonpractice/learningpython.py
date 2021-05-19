@@ -114,3 +114,18 @@ def longestPeak(array):
 			largestPeak = max(largestPeak, rightIdx - leftIdx - 1)
 		idx += 1
 	return largestPeak
+
+def mergeOverlappingIntervals(intervals):
+    # Write your code here.
+    intervals.sort()
+	result = [intervals[0]]
+	idx = 1
+	while idx < len(intervals):
+		formerInterval = result[-1]
+		currentInterval = intervals[idx]
+		if currentInterval[0] <= formerInterval[1]:
+			formerInterval[1] = max(formerInterval[1], currentInterval[1])
+		else:
+			result.append(currentInterval)
+		idx += 1
+	return result
