@@ -148,5 +148,15 @@ def validStartingCity(distances, fuel, mpg):
 				break
 		if currentFuelMiles == 0:
 			return idx
-				
+
+def powerset(array):
+    # Write your code here.
+    subsets = [[]]
+	for ele in array:
+		for idx in range(len(subsets)):
+			currentset = subsets[idx]
+			subsets.append(currentset + [ele])
+	return subsets
+
+
 
