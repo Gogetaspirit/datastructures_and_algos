@@ -106,3 +106,28 @@ def containsNegative(matrix):
 		
 		
 #recursion
+
+def sunsetViews(buildings, direction):
+    # Write your code here.
+	highest = -1
+	seeSunset = []
+    if direction == "EAST":
+		idx = len(buildings) - 1
+		while idx >= 0:
+			currentBuilding = buildings[idx]
+			if currentBuilding > highest:
+				highest = currentBuilding
+				seeSunset.append(idx)
+			idx -= 1
+		seeSunset.reverse()
+	else:
+		idx = 0
+		while idx < len(buildings):
+			currentBuilding = buildings[idx]
+			if currentBuilding > highest:
+				highest = currentBuilding
+				seeSunset.append(idx)
+			idx += 1
+	return seeSunset
+		
+
