@@ -129,5 +129,26 @@ def sunsetViews(buildings, direction):
 				seeSunset.append(idx)
 			idx += 1
 	return seeSunset
+
+
+	def balancedBrackets(string):
+    # Write your code here.
+    opening = {"(": True, "{": True, "[": True}
+	closing = {")": True, "}": False, "]": False}
+	matching = {"(": ")", "{": "}", "[": "]"}
+	stack = []
+	for idx in range(len(string)):
+		char = string[idx]
+		if opening.get(char) is None and closing.get(char) is None:
+			continue
+		elif len(stack) is 0:
+			stack.append(char)
+		elif opening.get(stack[-1]) is not None and char == matching[stack[-1]]:
+			stack.pop()
+		else:
+			stack.append(char)
+	return len(stack) == 0
+	
+
 		
 
