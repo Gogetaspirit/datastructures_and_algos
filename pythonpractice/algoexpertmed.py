@@ -149,6 +149,37 @@ def sunsetViews(buildings, direction):
 			stack.append(char)
 	return len(stack) == 0
 	
+def minimumCharactersForWords(words):
+    # Write your code here.
+    result = {}
+	resultArray = []
+	for word in words:
+		mapLetterToHash(word, result)
+	for key, value in result.items():
+		for count in range(value):
+			resultArray.append(key)
+	return resultArray
+		
+def mapLetterToHash(word, result):
+	letterFreq = {}
+	for letter in word:
+		if letter not in letterFreq:
+			letterFreq[letter] = 1
+		else:
+			letterFreq[letter] += 1
+	for key, value in letterFreq.items():
+		if key not in result:
+			result[key] = value
+		else:
+			result[key] = max(result[key], value)
+
+
+
+
+
+
+
+
 
 		
 
