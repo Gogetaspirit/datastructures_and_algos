@@ -193,6 +193,26 @@ def nextGreaterElement(array):
 		
 	return result
 
+def waterArea(heights):
+    # Write your code here.
+    maxes = [0] * len(heights)
+	leftMax = 0
+	for i in range(len(heights)):
+		currentHeight = heights[i]
+		maxes[i] = leftMax
+		leftMax = max(leftMax, currentHeight)
+	rightMax = 0
+	for i in reversed(range(len(heights))):
+		currentHeight = heights[i]
+		minHeight = min(rightMax, maxes[i])
+		if currentHeight < minHeight:
+			maxes[i] = minHeight - currentHeight
+		else:
+			maxes[i] = 0
+		rightMax = max(rightMax, currentHeight)
+	return sum(maxes)
+
+
 
 
 
