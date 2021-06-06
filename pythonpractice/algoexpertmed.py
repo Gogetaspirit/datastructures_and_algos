@@ -1,6 +1,6 @@
 def powerset(array, left = None):
     # Write your code here.
-    if left is None:
+	if left is None:
 		left = len(array) - 1
 	if left < 0:
 		return [[]]
@@ -111,7 +111,7 @@ def sunsetViews(buildings, direction):
     # Write your code here.
 	highest = -1
 	seeSunset = []
-    if direction == "EAST":
+	if direction == "EAST":
 		idx = len(buildings) - 1
 		while idx >= 0:
 			currentBuilding = buildings[idx]
@@ -131,9 +131,10 @@ def sunsetViews(buildings, direction):
 	return seeSunset
 
 
-	def balancedBrackets(string):
+def balancedBrackets(string):
+
     # Write your code here.
-    opening = {"(": True, "{": True, "[": True}
+	opening = {"(": True, "{": True, "[": True}
 	closing = {")": True, "}": False, "]": False}
 	matching = {"(": ")", "{": "}", "[": "]"}
 	stack = []
@@ -151,7 +152,7 @@ def sunsetViews(buildings, direction):
 	
 def minimumCharactersForWords(words):
     # Write your code here.
-    result = {}
+	result = {}
 	resultArray = []
 	for word in words:
 		mapLetterToHash(word, result)
@@ -176,7 +177,7 @@ def mapLetterToHash(word, result):
 
 def nextGreaterElement(array):
     # Write your code here.
-    result = [-1] * len(array)
+	result = [-1] * len(array)
 	stack = []
 	#[4,-1,3,3,-1,-1]
 	#[1]
@@ -195,7 +196,7 @@ def nextGreaterElement(array):
 
 def waterArea(heights):
     # Write your code here.
-    maxes = [0] * len(heights)
+	maxes = [0] * len(heights)
 	leftMax = 0
 	for i in range(len(heights)):
 		currentHeight = heights[i]

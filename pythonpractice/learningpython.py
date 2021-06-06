@@ -62,8 +62,8 @@ def sortedSquaredArray(array):
 
 def firstNonRepeatingCharacter(string):
     # Write your code here.
-  charFrequencies = {}
-  for char in string:
+	charFrequencies = {}
+	for char in string:
 		charFrequencies[char] = charFrequencies.get(char, 0) + 1
 	for idx in range(len(string)):
 		character = string[idx]
@@ -73,7 +73,7 @@ def firstNonRepeatingCharacter(string):
 
 def tandemBicycle(redShirtSpeeds, blueShirtSpeeds, fastest):
     # Write your code here.
-    redShirtSpeeds.sort()
+	redShirtSpeeds.sort()
 	blueShirtSpeeds.sort()
 	
 	if not fastest:
@@ -117,7 +117,7 @@ def longestPeak(array):
 
 def mergeOverlappingIntervals(intervals):
     # Write your code here.
-    intervals.sort()
+	intervals.sort()
 	result = [intervals[0]]
 	idx = 1
 	while idx < len(intervals):
@@ -132,13 +132,13 @@ def mergeOverlappingIntervals(intervals):
 
 def numberOfWaysToTraverseGraph(width, height):
     # Write your code here.
-    if width is 1 or height is 1:
+	if width is 1 or height is 1:
 		return 1
 	return numberOfWaysToTraverseGraph(width-1, height) + numberOfWaysToTraverseGraph(width, height-1)
 
 def validStartingCity(distances, fuel, mpg):
     # Write your code here.
-    idx = 0
+	idx = 0
 	for idx in range(len(distances)):
 		currentFuelMiles = 0
 		for currentCityIdx in range(idx, idx+len(distances)):
@@ -151,7 +151,7 @@ def validStartingCity(distances, fuel, mpg):
 
 def powerset(array):
     # Write your code here.
-    subsets = [[]]
+	subsets = [[]]
 	for ele in array:
 		for idx in range(len(subsets)):
 			currentset = subsets[idx]
