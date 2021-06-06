@@ -158,5 +158,27 @@ def powerset(array):
 			subsets.append(currentset + [ele])
 	return subsets
 
+def longestSubstringWithoutDuplication(string):
+    # Write your code here.
+	longest = [0, 0]
+	seen = {}
+	left = 0
+	right = 0
+	
+	while right < len(string):
+		if string[right] in seen:
+			if len(longest) == 0 or right - left > longest[1] - longest[0]:
+				longest = [left, right]
+			del seen[string[left]]
+			left += 1
+		else:
+			seen[string[right]] = True
+			right += 1
+	if right - left > longest[1] - longest[0]:
+		longest = [left, right]
+	return string[longest[0] : longest[1]]
+	
+	
+
 
 
