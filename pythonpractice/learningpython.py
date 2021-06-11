@@ -150,7 +150,7 @@ def validStartingCity(distances, fuel, mpg):
 			return idx
 
 def powerset(array):
-    # Write your code here.
+
 	subsets = [[]]
 	for ele in array:
 		for idx in range(len(subsets)):
@@ -159,7 +159,7 @@ def powerset(array):
 	return subsets
 
 def longestSubstringWithoutDuplication(string):
-    # Write your code here.
+
 	longest = [0, 0]
 	seen = {}
 	left = 0
